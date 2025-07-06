@@ -20,11 +20,11 @@ const Navigation = () => {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b z-50">
+    <nav className="fixed top-0 w-full bg-gradient-to-r from-blue-800 to-teal-800 backdrop-blur-md border-b border-blue-700/50 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href='#hero' onClick={() => scrollToSection('hero')} className="text-xl font-bold bg-gradient-to-r from-blue-600 via-teal-500 to-green-600 bg-clip-text text-transparent">
+          <a href='#hero' onClick={() => scrollToSection('hero')} className="text-xl font-bold text-white drop-shadow-lg">
             AC
           </a>
 

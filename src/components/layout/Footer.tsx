@@ -1,5 +1,8 @@
+'use client'
+
 import { Github, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { scrollToSection } from '@/lib/utils'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -11,39 +14,39 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-background border-t">
+    <footer className="bg-gradient-to-r from-blue-100 to-green-100 border-t border-gray-300/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Portfolio</h3>
-            <p className="text-muted-foreground text-sm">
-              Building digital experiences with modern technologies.
+            <h3 className="text-lg font-semibold text-gray-800">AC Portfolio</h3>
+            <p className="text-gray-700 text-sm">
+              Built with Next.js, React, and Tailwind CSS
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-gray-800">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              <a href="#hero" onClick={() => scrollToSection('hero')} className="text-gray-700 hover:text-blue-600 transition-colors text-sm">
                 Home
-              </Link>
-              <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              </a>
+              <a href="#about" onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-blue-600 transition-colors text-sm">
                 About
-              </Link>
-              <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              </a>
+              <a href="#projects" onClick={() => scrollToSection('projects')} className="text-gray-700 hover:text-blue-600 transition-colors text-sm">
                 Projects
-              </Link>
-              <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+              </a>
+              <a href="#contact" onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 transition-colors text-sm">
                 Contact
-              </Link>
+              </a>
             </nav>
           </div>
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Connect</h3>
+            <h3 className="text-lg font-semibold text-gray-800">Connect</h3>
             <div className="flex space-x-4">
               {socialLinks.map((link) => {
                 const Icon = link.icon
@@ -51,7 +54,7 @@ const Footer = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-gray-700 hover:text-teal-600 transition-colors"
                     aria-label={link.name}
                   >
                     <Icon size={20} />
@@ -62,9 +65,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t text-center">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} Portfolio. All rights reserved.
+        <div className="mt-8 pt-8 border-t border-gray-400/30 text-center">
+          <p className="text-gray-700 text-sm">
+            © {currentYear} Alanna Celentano
           </p>
         </div>
       </div>
