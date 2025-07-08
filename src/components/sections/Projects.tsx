@@ -33,6 +33,7 @@ export default function Projects() {
   // Repos you want to display (comment out the ones you don't want)
   const displayedRepos = [
     'kanban-board',
+    '100pushups',
     'dragon-slayers', 
     'hero-destroyer',
     'Hyrule-Stays',
@@ -46,12 +47,12 @@ export default function Projects() {
   // Custom project data to supplement GitHub API data
   const customProjectData: Record<string, { deployedUrl?: string; customDescription?: string; technologies?: string[] }> = {
     'kanban-board': {
-      deployedUrl: 'https://hypertext-assassins-kanban.herokuapp.com/',
+      // deployedUrl: 'https://hypertext-assassins-kanban.herokuapp.com/',
       customDescription: 'A front-end CRUD app, using React, that helps users organize tasks and to-do lists',
       technologies: ['JavaScript', 'CSS', 'HTML', 'Bootstrap', 'React', 'Semantic UI React']
     },
     'dragon-slayers': {
-      deployedUrl: 'https://dragon-slayers.herokuapp.com/',
+      // deployedUrl: 'https://dragon-slayers.herokuapp.com/',
       customDescription: 'Dragon Slayers is a turn based game built for Mintbean\'s Multiplayer Hackathon',
       technologies: ['HTML', 'JavaScript', 'CSS', 'React.js']
     },
@@ -61,19 +62,24 @@ export default function Projects() {
       technologies: ['JavaScript', 'CSS', 'HTML']
     },
     'Hyrule-Stays': {
-      deployedUrl: 'https://hyrule-stays.herokuapp.com/',
+      // deployedUrl: 'https://hyrule-stays.herokuapp.com/',
       customDescription: 'Hyrule Stays is a campsite/stable review site based on the world of Hyrule from the Legend of Zelda video game series.',
       technologies: ['JavaScript', 'CSS', 'HTML', 'OAuth', 'Node.js', 'Express.js', 'Materialize', 'MongoDB']
     },
     'The-Best-Barcade': {
-      deployedUrl: 'https://thebestbarcade.herokuapp.com/',
+      // deployedUrl: 'https://thebestbarcade.herokuapp.com/',
       customDescription: 'A full-stack Python app to track arcade games and the local bars that have them.',
       technologies: ['CSS', 'HTML', 'Python', 'PostgreSQL', 'Materialize', 'Django', 'AWS']
     },
     'steam-collector': {
-      deployedUrl: 'https://steam-collector.herokuapp.com/',
+      // deployedUrl: 'https://steam-collector.herokuapp.com/',
       customDescription: 'Steam Collector is a full-stack MERN application which allows users to keep track of their games on the Steam game library.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB', 'Express.js', 'JWT', 'Semantic UI React', 'React.js']
+    },
+    '100pushups': {
+      deployedUrl: 'https://100pushups.netlify.app/',
+      customDescription: 'This app is based off of the 100 pushups training program from: https://hundredpushups.com/',
+      technologies: ['Javascript', 'React.js', 'Materialize']
     },
     'Threes': {
       deployedUrl: 'https://celentanoad.github.io/Threes/',
@@ -112,7 +118,7 @@ export default function Projects() {
       title: repo.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
       description: customData.customDescription || repo.description || 'No description available',
       technologies: customData.technologies || (repo.language ? [repo.language] : []),
-      deployedUrl: customData.deployedUrl || repo.homepage || undefined,
+      deployedUrl: customData.deployedUrl || undefined,
       sourceUrl: repo.html_url,
       stars: repo.stargazers_count,
       language: repo.language
